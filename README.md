@@ -8,8 +8,9 @@
 4. EMQX(使用Docker部署)
 
 ## 主要操作步骤
-1. 下载本代码到NGINX的工作目录并在命令行运行
+1. 下载本代码并在命令行运行以下命令，把生成的dist目录放在NGINX工作目录下
 ```npm install```
+```npm run build```
 2. 配置NGINX服务器，主要配置如下
 ``` 
 location /mqtt {
@@ -24,7 +25,7 @@ location /mqtt {
     }
 
     location / {
-        root your/work/root;   
+        root your/work/dist;   
         index index.html;
     }
 ```
