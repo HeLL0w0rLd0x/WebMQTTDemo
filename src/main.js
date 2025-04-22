@@ -18,6 +18,11 @@ client.on('message', (topic, message) => {
   log(`📨 收到消息 - Topic: ${topic} | Message: ${message.toString()}`);
 });
 
+document.getElementById('sendBtn').addEventListener('click', () => {
+  sendMessage();
+});
+
+
 function sendMessage() {
   const msg = document.getElementById('msgInput').value;
   client.publish('test/topic', msg);
