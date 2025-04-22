@@ -1,4 +1,6 @@
-const client = mqtt.connect('ws://localhost/mqtt');
+import mqtt from 'mqtt';
+
+const client = mqtt.connect('ws://192.168.137.1/mqtt');//ws默认使用80端口
 //const client = mqtt.connect('ws://localhost:8083/mqtt'); // 直连 EMQX（绕过 nginx）
 
 client.on('connect', () => {
